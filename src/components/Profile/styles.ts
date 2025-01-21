@@ -2,18 +2,17 @@ import styled from "styled-components"
 
 export const ProfileContainer = styled.div`
   width: 100%;
-  max-width: 1120px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 1.5rem;
 
   display: flex;
-  flex-direction: column;
   z-index: 2;
   margin-top: -8rem;
   position: relative;
   background: ${(props) => props.theme["gray-700"]};
   border-radius: 10px;
-  padding: 2rem;
+  padding: 2rem 2rem;
   align-items: flex-start;
 `
 
@@ -25,7 +24,10 @@ export const ProfileHeader = styled.header`
 `
 
 export const ProfileImage = styled.div`
-  display: flex;
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
 `
 
 export const ProfileContent = styled.div`
@@ -71,5 +73,46 @@ export const ProfileInfo = styled.footer`
     display: flex;
     gap: 0.5rem;
     align-items: center;
+  }
+`
+
+export const FormContainer = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  margin-top: 4.5rem;
+
+  & div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+
+    & h3 {
+      color: ${(props) => props.theme["gray-100"]};
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    & span {
+      color: ${(props) => props.theme["gray-300"]};
+    }
+  }
+
+  & input[type="text"] {
+    padding: 0.7rem;
+    border-radius: 6px;
+    background: ${(props) => props.theme["gray-900"]};
+    outline: 0;
+    border: 1px solid ${(props) => props.theme["gray-500"]};
+    color: ${(props) => props.theme["gray-400"]};
+
+    &::placeholder {
+      color: ${(props) => props.theme["gray-400"]};
+    }
   }
 `
