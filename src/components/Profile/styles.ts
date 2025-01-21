@@ -76,7 +76,7 @@ export const ProfileInfo = styled.footer`
   }
 `
 
-export const FormContainer = styled.form`
+export const SearchFormContainer = styled.form`
   width: 100%;
   display: flex;
   flex-direction: column;

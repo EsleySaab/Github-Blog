@@ -1,5 +1,5 @@
 import {
-  FormContainer,
+  SearchFormContainer,
   ProfileContainer,
   ProfileContent,
   ProfileHeader,
@@ -57,13 +57,13 @@ export function Profile() {
         </ProfileHeader>
       </ProfileContainer>
 
-      <FormContainer action="">
+      <SearchFormContainer action="">
         <div>
           <h3>Publicações</h3>
           <span>6 publicações</span>
         </div>
         <input type="text" placeholder="Buscar conteúdo" />
-      </FormContainer>
+      </SearchFormContainer>
     </>
   )
 }
