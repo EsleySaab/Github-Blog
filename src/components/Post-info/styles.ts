@@ -27,6 +27,10 @@ export const PostInfoContainer = styled.div`
     gap: 0.5rem;
     color: ${(props) => props.theme["blue-100"]};
     cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   main {
@@ -46,7 +50,7 @@ export const PostInfoContainer = styled.div`
 
     & div {
       display: flex;
-      gap: .5rem;
+      gap: 0.5rem;
       align-items: center;
     }
   }

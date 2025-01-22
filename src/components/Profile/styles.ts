@@ -57,6 +57,11 @@ export const ProfileContent = styled.div`
     height: fit-content;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   main {
