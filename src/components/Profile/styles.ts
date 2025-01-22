@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ProfileContainer = styled.div`
   width: 100%;
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.5rem;
 
@@ -104,7 +104,7 @@ export const SearchFormContainer = styled.form`
   }
 
   & input[type="text"] {
-    padding: 0.7rem;
+    padding: 0.8rem;
     border-radius: 6px;
     background: ${(props) => props.theme["gray-900"]};
     outline: 0;
@@ -113,6 +113,10 @@ export const SearchFormContainer = styled.form`
 
     &::placeholder {
       color: ${(props) => props.theme["gray-400"]};
+    }
+
+    &:focus {
+      border: 1px solid ${(props) => props.theme["blue-100"]};
     }
   }
 `

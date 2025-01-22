@@ -1,4 +1,5 @@
 import { Header } from "../../components/Header"
+import { Issues } from "../../components/Issues"
 import { Profile } from "../../components/Profile"
 
 export function Home() {
@@ -6,6 +7,7 @@ export function Home() {
     <div>
       <Header />
       <Profile />
+      <Issues />
     </div>
   )
 }

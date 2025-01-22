@@ -19,4 +19,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     font-weight: 400;
   }
+
+  a {
+    all: unset;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 `
