@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import { Home } from "./pages/Home"
 import { Posts } from "./pages/Posts"
+import { DefaultLayout } from "./pages/layouts/DefaultLayout"
 
 export function App() {
   return (
@@ -12,9 +13,11 @@ export function App() {
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route element={<DefaultLayout />}>
+            <Route path="/" element={<Home />} />
 
-          <Route path="/posts" element={<Posts />} />
+            <Route path="/posts" element={<Posts />} />
+          </Route>
         </Routes>
       </Router>
     </ThemeProvider>
