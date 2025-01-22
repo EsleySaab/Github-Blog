@@ -9,10 +9,34 @@ import {
 import avatar from "../../assets/avatar.jpeg"
 import { ArrowSquareOut } from "phosphor-react"
 import github from "../../assets/Icon.svg"
-import predio from "../../assets/predio.svg"
 import followers from "../../assets/followers.svg"
+import axios from "axios"
+import { useEffect, useState } from "react"
+
+interface ProfileProps {
+  name: string
+  bio: string | null
+  company: string | null
+  followers: number
+  html_url: string
+}
 
 export function Profile() {
+  const [profile, setProfile] = useState<ProfileProps | null>(null)
+
+  useEffect(() => {
+    const username = "EsleySaab"
+
+    axios.get(`https://api.github.com/users/${username}`).then((response) => {
+      console.log("Dados do perfil:", response.data)
+      setProfile(response.data)
+    })
+  }, [])
+
+  if (!profile) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <>
       <ProfileContainer>
@@ -27,30 +51,23 @@ export function Profile() {
           </ProfileImage>
           <ProfileContent>
             <header>
-              <h1>Esley Santana</h1>
-              <a href="">
+              <h1>{profile.name}</h1>
+              <a href={profile.html_url} target="_blank">
                 Github
                 <ArrowSquareOut width={20} height={20} />
               </a>
             </header>
-            <main>
-              Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-              viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-              volutpat pulvinar vel mass.
-            </main>
+            <main>{profile.bio}</main>
             <ProfileInfo>
               <div>
                 <img src={github} alt="" width={22} height={22} />
 
-                <span>EsleySaab</span>
+                <span>{profile.name}</span>
               </div>
-              <div>
-                <img src={predio} alt="" />
-                <span>Rocketseat</span>
-              </div>
+
               <div>
                 <img src={followers} alt="" />
-                <span>22 seguidores</span>
+                <span>{profile.followers} seguidores</span>
               </div>
             </ProfileInfo>
           </ProfileContent>
