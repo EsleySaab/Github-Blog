@@ -1,3 +1,4 @@
+import { MapPin } from "phosphor-react"
 import styled from "styled-components"
 
 export const ProfileContainer = styled.div`
@@ -124,4 +125,8 @@ export const SearchFormContainer = styled.form`
       border: 1px solid ${(props) => props.theme["blue-100"]};
     }
   }
+`
+
+export const StyledMapPin = styled(MapPin)`
+  color: ${(props) => props.theme["gray-400"]};
 `

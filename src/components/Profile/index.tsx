@@ -5,6 +5,7 @@ import {
   ProfileHeader,
   ProfileImage,
   ProfileInfo,
+  StyledMapPin,
 } from "./styles"
 import avatar from "../../assets/avatar.jpeg"
 import { ArrowSquareOut } from "phosphor-react"
@@ -16,9 +17,11 @@ import { useEffect, useState } from "react"
 interface ProfileProps {
   name: string
   bio: string | null
+  login: string
   company: string | null
   followers: number
   html_url: string
+  location: string
 }
 
 export function Profile() {
@@ -62,7 +65,12 @@ export function Profile() {
               <div>
                 <img src={github} alt="" width={22} height={22} />
 
-                <span>{profile.name}</span>
+                <span>{profile.login}</span>
+              </div>
+
+              <div>
+                <StyledMapPin width={22} height={22} />
+                <span>{profile.location}</span>
               </div>
 
               <div>
